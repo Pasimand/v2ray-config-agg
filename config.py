@@ -34,7 +34,6 @@ for url in webpage_addresses:
     response = requests.get(url)
     html_pages.append(response.text)
 
-# Step 2-5: Process HTML pages and extract codes
 codes = []
 
 for page in html_pages:
@@ -48,7 +47,6 @@ for page in html_pages:
 
 codes = list(set(codes))  # Remove duplicates
 
-# Step 5-7: Process codes
 processed_codes = []
 
 i = 1
@@ -57,18 +55,14 @@ for code in codes:
     vless_parts = code.split("vless://")
 
     for part in vmess_parts + vless_parts:
-        if "ss://" in part or "vmess://" in part or "vless://" in part:
+        if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part:
             service_name = part.split("serviceName=")[-1].split("&")[0]
             processed_part = part.split("#")[0] + "#CONFIG" + str(i)  # Replace text after "#"
             processed_codes.append(processed_part)
             i += 1
 
-# Step 8: Remove duplicates from processed codes
 processed_codes = list(set(processed_codes))
 
-# print(processed_codes)
-
-# Write processed codes into a .txt file
 with open("config.txt", "w") as file:
     for code in processed_codes:
         file.write(code + "\n")
