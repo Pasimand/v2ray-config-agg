@@ -1,5 +1,7 @@
 import requests
-from bs4 import BeautifulSoup 
+from bs4 import BeautifulSoup
+from datetime import datetime
+
 
 webpage_addresses = [
     "https://t.me/s/filterkoshi",
@@ -50,6 +52,7 @@ codes = list(set(codes))  # Remove duplicates
 processed_codes = []
 
 i = 1
+current_date = datetime.now().strftime("%d%H")
 for code in codes:
     vmess_parts = code.split("vmess://")
     vless_parts = code.split("vless://")
@@ -57,7 +60,7 @@ for code in codes:
     for part in vmess_parts + vless_parts:
         if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part:
             service_name = part.split("serviceName=")[-1].split("&")[0]
-            processed_part = part.split("#")[0] + "#CONFIG" + str(i)  # Replace text after "#"
+            processed_part = part.split("#")[0] + "#C-" + str(current_date) + "-" + str(i)
             processed_codes.append(processed_part)
             i += 1
 
