@@ -15,19 +15,19 @@ webpage_addresses = [
     "https://t.me/s/v2rayngvpn",
     "https://t.me/s/VpnProSec",
     "https://t.me/s/VpnOrgSec",
-    "https://t.me/v2ray_outlineir",
-    "https://t.me/PrivateVPNs",
-    "https://t.me/v2_vmess",
-    "https://t.me/V2RAY_VMESS_free",
-    "https://t.me/ShadowsocksM",
-    "https://t.me/ShadowSocks_s",
-    "https://t.me/VmessProtocol",
-    "https://t.me/FOX_VPN66",
-    "https://t.me/Network_442",
-    "https://t.me/Awlix_ir",
-    "https://t.me/God_CONFIG",
-    "https://t.me/Configforvpn01",
-    "https://t.me/vpn_ocean"
+    "https://t.me/s/v2ray_outlineir",
+    "https://t.me/s/PrivateVPNs",
+    "https://t.me/s/v2_vmess",
+    "https://t.me/s/V2RAY_VMESS_free",
+    "https://t.me/s/ShadowsocksM",
+    "https://t.me/s/ShadowSocks_s",
+    "https://t.me/s/VmessProtocol",
+    "https://t.me/s/FOX_VPN66",
+    "https://t.me/s/Network_442",
+    "https://t.me/s/Awlix_ir",
+    "https://t.me/s/God_CONFIG",
+    "https://t.me/s/Configforvpn01",
+    "https://t.me/s/vpn_ocean"
 ]
 
 html_pages = []
