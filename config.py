@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 webpage_addresses = [
@@ -51,8 +51,25 @@ codes = list(set(codes))  # Remove duplicates
 
 processed_codes = []
 
+# Get the current date and time
+current_date_time = datetime.now()
+
+# Print the current month in letters
+current_month = current_date_time.strftime("%b")
+
+# Get the current day as a string
+current_day = current_date_time.strftime("%d")
+
+# Increase the current hour by 4 hours
+new_date_time = current_date_time + timedelta(hours=4)
+
+# Get the updated hour as a string
+updated_hour = new_date_time.strftime("%H")
+
+# Combine the strings to form the final result
+final_string = f"{current_month}-{current_day}-{updated_hour}"
+
 i = 1
-current_date = datetime.now().strftime("%d%H")
 for code in codes:
     vmess_parts = code.split("vmess://")
     vless_parts = code.split("vless://")
@@ -60,12 +77,15 @@ for code in codes:
     for part in vmess_parts + vless_parts:
         if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part:
             service_name = part.split("serviceName=")[-1].split("&")[0]
-            processed_part = part.split("#")[0] + "#C-" + str(current_date) + "-" + str(i)
+            processed_part = part.split("#")[0] + "#✅ " + str(final_string) + ":00-" + str(i)
             processed_codes.append(processed_part)
             i += 1
 
 processed_codes = list(set(processed_codes))
 
-with open("config.txt", "w") as file:
+print(processed_codes)
+
+with open("config.txt", "w", encoding="utf-8") as file:
     for code in processed_codes:
+        print(code)
         file.write(code + "\n")
