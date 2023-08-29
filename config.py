@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 
-
 webpage_addresses = [
     "https://t.me/s/filterkoshi",
     "https://t.me/s/MsV2ray",
@@ -29,6 +28,15 @@ webpage_addresses = [
     "https://t.me/s/Configforvpn01",
     "https://t.me/s/vpn_ocean"
 ]
+
+
+def remove_duplicates(input_list):
+    unique_list = []
+    for item in input_list:
+        if item not in unique_list:
+            unique_list.append(item)
+    return unique_list
+
 
 html_pages = []
 
@@ -68,8 +76,8 @@ updated_hour = new_date_time.strftime("%H")
 
 # Combine the strings to form the final result
 final_string = f"{current_month}-{current_day}-{updated_hour}"
+config_string = "#✅ " + str(final_string) + ":00-"
 
-i = 1
 for code in codes:
     vmess_parts = code.split("vmess://")
     vless_parts = code.split("vless://")
@@ -77,15 +85,18 @@ for code in codes:
     for part in vmess_parts + vless_parts:
         if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part:
             service_name = part.split("serviceName=")[-1].split("&")[0]
-            processed_part = part.split("#")[0] + "#✅ " + str(final_string) + ":00-" + str(i)
+            processed_part = part.split("#")[0]
             processed_codes.append(processed_part)
-            i += 1
 
-processed_codes = list(set(processed_codes))
+processed_codes = remove_duplicates(processed_codes)
 
-print(processed_codes)
-
+i = 0
 with open("config.txt", "w", encoding="utf-8") as file:
     for code in processed_codes:
-        print(code)
-        file.write(code + "\n")
+        if i == 0:
+            config_string = "#🌐 Updated on " + final_string + ":00 | @config_kharaki"
+        else:
+            config_string = "#✅ " + str(final_string) + ":00-" + str(i)
+        config_final = code + config_string
+        file.write(config_final + "\n")
+        i += 1
