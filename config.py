@@ -5,28 +5,32 @@ from datetime import datetime, timedelta
 webpage_addresses = [
     "https://t.me/s/filterkoshi",
     "https://t.me/s/MsV2ray",
+    "https://t.me/s/msv2raynp",
     "https://t.me/s/Outline_Vpn",
+    "https://t.me/s/outlineOpenKey",
     "https://t.me/s/ARv2ray",
-    "https://t.me/s/Eleven_vpn",
     "https://t.me/s/v2rayng_org",
     "https://t.me/s/freeownvpn",
     "https://t.me/s/msv2raynp",
     "https://t.me/s/v2rayngvpn",
-    "https://t.me/s/VpnProSec",
+    "https://t.me/s/V_2rayngVpn",
     "https://t.me/s/VpnOrgSec",
     "https://t.me/s/v2ray_outlineir",
     "https://t.me/s/PrivateVPNs",
-    "https://t.me/s/v2_vmess",
     "https://t.me/s/V2RAY_VMESS_free",
     "https://t.me/s/ShadowsocksM",
+    "https://t.me/s/proxy_mtm",
     "https://t.me/s/ShadowSocks_s",
     "https://t.me/s/VmessProtocol",
     "https://t.me/s/FOX_VPN66",
-    "https://t.me/s/Network_442",
     "https://t.me/s/Awlix_ir",
-    "https://t.me/s/God_CONFIG",
     "https://t.me/s/Configforvpn01",
-    "https://t.me/s/vpn_ocean"
+    "https://t.me/s/vpn_ocean",
+    "https://t.me/s/v2Line",
+    "https://t.me/s/vpn_Nv1",
+    "https://t.me/s/vmessiran",
+    "https://t.me/s/vmessorg",
+    "https://t.me/s/VlessConfig"
 ]
 
 
